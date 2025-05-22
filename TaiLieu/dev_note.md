@@ -4,3 +4,5 @@ https://www.researchgate.net/figure/Schematic-block-of-the-AI-based-training-and
 
 -Giới thiệu về mô hình ARIMA
 https://www.datacamp.com/tutorial/arima
+
+-Phiên bản python sử dụng: 3.12.0
