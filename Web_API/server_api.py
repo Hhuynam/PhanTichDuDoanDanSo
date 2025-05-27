@@ -9,9 +9,9 @@ CORS(app)  # Cho phép CORS để frontend có thể thực hiện request
 # Đường dẫn tuyệt đối tới file JSON dự báo
 JSON_FORECAST_PATH = r"D:\HocKy3_2024-2025\KhoaHocDuDoanDanSo\Model\arima_population_forecast.json"
 # Đường dẫn file biểu đồ ACF/PACF
-CHART_PATH_1 = r"D:\HocKy3_2024-2025\KhoaHocDuDoanDanSo\Model\acf_pacf_chart.png"
+CHART_PATH_1 = r"D:\HocKy3_2024-2025\KhoaHocDuLieu\PhanTichDuDoanDanSo\Model\acf_pacf_chart.png"
 # Đường dẫn file biểu đồ dự báo
-CHART_PATH_2 = r"D:\HocKy3_2024-2025\KhoaHocDuDoanDanSo\Model\forecast_chart.png"
+CHART_PATH_2 = r"D:\HocKy3_2024-2025\KhoaHocDuLieu\PhanTichDuDoanDanSo\Model\forecast_chart.png"
 
 @app.route('/forecast', methods=['GET'])
 def get_forecast():

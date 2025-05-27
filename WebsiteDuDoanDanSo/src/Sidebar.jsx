@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "./App.css";
 
 const Sidebar = () => {
@@ -9,11 +9,27 @@ const Sidebar = () => {
   const [forecastSteps, setForecastSteps] = useState(10);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  // State lưu file đã chọn
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  // Tham chiếu tới <input type="file">
+  const fileInputRef = useRef();
 
   // Hàm xử lý khi nhấn nút "Tải file dữ liệu csv"
   const handleUploadFile = () => {
     console.log("Chức năng tải file được gọi.");
-    // Bạn có thể tích hợp phần upload file ở đây.
+    // Mở hộp thoại chọn file
+    fileInputRef.current.click();
+  };
+
+  // Khi file được chọn
+  const handleFileChange = (e) => {
+    if (e.target.files.length > 0) {
+      const file = e.target.files[0];
+      setSelectedFile(file);
+      console.log("File được chọn:", file);
+      // Bạn có thể tiến hành upload file ngay ở đây hoặc khi người dùng nhấn nút khác.
+    }
   };
 
   // Hàm xử lý khi nhấn nút "Dự đoán ngay"
@@ -42,7 +58,6 @@ const Sidebar = () => {
       }
       const result = await response.json();
       console.log("Dự đoán hoàn thành, kết quả:", result);
-      // Nếu có callback để cập nhật giao diện (ví dụ, re-fetch dữ liệu dự báo hoặc cập nhật MainChart)
       alert("Dự đoán xong! Vui lòng kiểm tra kết quả mới trên giao diện.");
     } catch (err) {
       console.error("Lỗi khi dự đoán:", err);
@@ -60,6 +75,14 @@ const Sidebar = () => {
           <button type="button" onClick={handleUploadFile}>
             Tải file dữ liệu csv
           </button>
+          {/* Ẩn input file, nó sẽ được kích hoạt khi gọi fileInputRef.current.click() */}
+          <input
+            type="file"
+            ref={fileInputRef}
+            style={{ display: "none" }}
+            accept=".csv"
+            onChange={handleFileChange}
+          />
         </li>
         <li>
           <div style={{ marginTop: "10px" }}>

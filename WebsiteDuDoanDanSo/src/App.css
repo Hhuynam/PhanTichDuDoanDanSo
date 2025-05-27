@@ -98,7 +98,7 @@ header {
    ========================================================================== */
 footer {
   background-color: #777;
-  padding: 10px;
+  padding: 10 px;
   text-align: center;
   color: white;
 }
@@ -211,4 +211,24 @@ th {
     font-size: 0.9em;
     padding: 8px;
   }
+}
+
+/* ==========================================================================
+   arrow slider 
+   ========================================================================== */
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  cursor: pointer;
+  color: #333;
+}
+
+.next-arrow {
+  right: 15px;
+}
+
+.prev-arrow {
+  left: 15px;
 }
