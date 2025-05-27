@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Cập nhật hệ thống",
+    "message": "Chúng tôi vừa cập nhật các tính năng mới cho trải nghiệm tốt hơn.",
+    "date": "2025-05-26T15:30:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Bảo trì định kỳ",
+    "message": "Hệ thống sẽ bảo trì vào lúc 02:00 AM ngày mai.",
+    "date": "2025-05-27T01:00:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Thông báo!Game sắp có bản cập nhật lớn",
+    "message": "Phiên bản 0.0.0.0.0.0.1",
+    "date": "2025-05-29T12:30:00Z"
+  }
+]

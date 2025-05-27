@@ -1,13 +1,15 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "npm",
-			"script": "dev",
-			"path": "website_dudoandanso",
-			"problemMatcher": [],
-			"label": "npm: dev - website_dudoandanso",
-			"detail": "vite"
-		}
-	]
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "chạy all",
+      "type": "shell",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "cd WebsiteDuDoanDanSo && start npm run dev && start node server.js && start http://localhost:5002"
+      ],
+      "problemMatcher": []
+    }
+  ]
 }

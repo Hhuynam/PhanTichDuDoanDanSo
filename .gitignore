@@ -1,2 +1,3 @@
-#bỏ theo dõi folder .venv
+#cấu hình git bỏ theo dõi các thứ không cần thiết
 .venv/
+WebsiteDuDoanDanSo/node_modules/
