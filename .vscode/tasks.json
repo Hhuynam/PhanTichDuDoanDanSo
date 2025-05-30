@@ -7,7 +7,7 @@
       "command": "cmd",
       "args": [
         "/c",
-        "cd WebsiteDuDoanDanSo && start npm run dev && start node server.js && start http://localhost:5002"
+        "cd WebsiteDuDoanDanSo && start npm run dev && start node server.js && start python ./Web_API/server_api.py && start http://localhost:5002"
       ],
       "problemMatcher": []
     }
