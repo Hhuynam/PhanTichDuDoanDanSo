@@ -6,6 +6,7 @@ import fs from "fs";
 import cors from "cors";
 import path from "path";
 import { fileURLToPath } from "url";
+import fetch from "node-fetch"; // Sử dụng node-fetch để gọi Flask API
 
 // Tính __dirname cho ES Module
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +16,7 @@ const app = express();
 const port = process.env.PORT || 5003;
 
 app.use(cors());
+app.use(express.json()); // Cho phép xử lý JSON body
 
 // Đường dẫn file dự báo JSON
 const forecastJsonPath = "D:\\HocKy3_2024-2025\\KhoaHocDuLieu\\PhanTichDuDoanDanSo\\Model\\arima_population_forecast.json";
@@ -53,6 +55,23 @@ app.get("/notifications", (req, res) => {
       res.status(500).json({ error: "Error parsing notifications JSON" });
     }
   });
+});
+
+// NEW: Endpoint POST /run_prediction
+// Endpoint này chuyển tiếp yêu cầu dự báo đến Flask API đang chạy trên port 5004.
+app.post("/run_prediction", async (req, res) => {
+  try {
+    const response = await fetch("http://localhost:5004/run_prediction", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(req.body)
+    });
+    const result = await response.json();
+    res.json(result);
+  } catch (error) {
+    console.error("Error forwarding run_prediction request:", error);
+    res.status(500).json({ error: "Error running prediction" });
+  }
 });
 
 app.listen(port, () => {
