@@ -4,5 +4,6 @@
 
 -Tên đề tài: **Phân tích dự báo dân số**
 
-https://websitedudoandanso.web.app/
 ![alt text](image-1.png)
+
+- video test: D:\HocKy3_2024-2025\KhoaHocDuLieu\PhanTichDuDoanDanSo\video_test_web_danso.mp4
